@@ -1,4 +1,4 @@
-import test from "ava";
+import * as test from "ava";
 import { ContactsCollection } from "./models";
 import * as contactsObject from "./contacts.json";
 import * as jsonfile from "jsonfile";

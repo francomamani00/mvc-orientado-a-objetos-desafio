@@ -7,7 +7,7 @@ class Contact {
 class ContactsCollection {
   arrayDeLaData: Contact[] = [];
   load() {
-    const arrayDeContacts = jsonfile.readFyleSinc("./contacts.json");
+    const arrayDeContacts = jsonfile.readFileSync("./contacts.json");
     this.arrayDeLaData = arrayDeContacts;
   }
   // lee el archivo de contacts.json y lo guarda
@@ -19,7 +19,7 @@ class ContactsCollection {
     return this.arrayDeLaData.push(contact);
   }
   save() {
-    jsonfile.writeFyleSync("./contacts.json", this.arrayDeLaData);
+    jsonfile.writeFileSync("./contacts.json", this.arrayDeLaData);
     // esto hace que el contacts.json se actualice cada vez
     // que agregamos a algun contacto con el metodo addOne
     // ESTO REESCRIBE EL CONTACTS.JSON
